@@ -11,36 +11,9 @@
 <body>
 
 <div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="page-header">
-                <h1 class="text-center">Books lookup tool</h1>
-            </div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"
-                        th:attrappend="aria-current=${iterStat.index == #lists.size(breadcrumbs)-1} ? page : ''"
-                        th:classappend="${iterStat.index == #lists.size(breadcrumbs)-1} ? active : ''"
-                        th:each="breadcrumb, iterStat : ${breadcrumbs}">
+    <div th:replace="fragments/headerAndFooter :: header"></div>
 
-                        <a th:if="${iterStat.index < #lists.size(breadcrumbs)-1}"
-                           th:href="${breadcrumb.path}" th:text="${breadcrumb.display}"> Path breadcrumb </a>
-                        <th:block th:if="${iterStat.index == #lists.size(breadcrumbs)-1}" th:text="${breadcrumb.display}"> Last </th:block>
-                    </li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <footer class="footer">
-                <div class="container">
-                    <span class="text-muted">2018 Jakub Trzebiatowski</span>
-                </div>
-            </footer>
-        </div>
-    </div>
+    <div th:replace="fragments/headerAndFooter :: footer"></div>
 </div>
 
 <!-- Placed at the end of the document so the pages load faster -->
