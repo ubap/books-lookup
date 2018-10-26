@@ -19,7 +19,6 @@ public class Price {
     @JsonProperty("currencyCode")
     private String currencyCode;
 
-    @Getter
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
