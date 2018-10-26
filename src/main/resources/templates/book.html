@@ -27,6 +27,7 @@
                     <th:block th:if="${book.ebook}">
                         <h4>Ebook</h4>
                     </th:block>
+                    <h5 th:text="'ISBN: ' + ${book.isbn.isbn10} + ', ' + ${book.isbn.isbn13}"></h5>
                     <img th:src="${#strings.isEmpty(book.thumbnailUrl) ?
                                     'https://books.google.pl/googlebooks/images/no_cover_thumb.gif' : book.thumbnailUrl}"
                          alt="Book cover image">
