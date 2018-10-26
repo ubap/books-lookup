@@ -1,5 +1,6 @@
 package com.ubap.bookslookup.controllers;
 
+import com.google.common.net.UrlEscapers;
 import com.ubap.bookslookup.model.Breadcrumb;
 import com.ubap.bookslookup.services.LibraryService;
 import lombok.extern.slf4j.Slf4j;
@@ -28,9 +29,10 @@ public class SearchController {
 
         model.addAttribute("books", this.libraryService.searchForBooksWithIsbnByTitle(query));
         model.addAttribute("query", query);
+        String escapedQuery = UrlEscapers.urlFragmentEscaper().escape(query);
         model.addAttribute("breadcrumbs", Arrays.asList(
                 new Breadcrumb("/", "Search"),
-                new Breadcrumb("/search/" + query, query)));
+                new Breadcrumb("/search/" + escapedQuery, query)));
 
         return "index";
     }

@@ -19,6 +19,7 @@ public class SaleInfo {
     @JsonProperty("saleability")
     private String saleability;
 
+    @Getter
     @JsonProperty("isEbook")
     private Boolean isEbook;
 

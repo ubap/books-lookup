@@ -1,5 +1,6 @@
 package com.ubap.bookslookup.controllers;
 
+import com.google.common.net.UrlEscapers;
 import com.ubap.bookslookup.model.Book;
 import com.ubap.bookslookup.model.Breadcrumb;
 import com.ubap.bookslookup.model.Isbn;
@@ -41,10 +42,11 @@ public class BookController {
 
         model.addAttribute("offers", storeOfferList);
         model.addAttribute("book", book);
+        String escapedQuery = UrlEscapers.urlFragmentEscaper().escape(query);
         model.addAttribute("breadcrumbs", Arrays.asList(
                 new Breadcrumb("/", "Search"),
-                new Breadcrumb("/search/" + query, query),
-                new Breadcrumb("/search/" + query + "/book/" + isbns, book.getTitle())));
+                new Breadcrumb("/search/" + escapedQuery, query),
+                new Breadcrumb("/search/" + escapedQuery + "/book/" + isbns, book.getTitle())));
 
         return "book";
     }

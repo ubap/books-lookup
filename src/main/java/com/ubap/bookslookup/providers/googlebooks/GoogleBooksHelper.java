@@ -101,6 +101,9 @@ final class GoogleBooksHelper {
         if (volumeInfo.getImageLinks() != null) {
             bookBuilder.thumbnailUrl(volumeInfo.getImageLinks().getThumbnail());
         }
+        if (item.getSaleInfo() != null) {
+            bookBuilder.ebook(item.getSaleInfo().getIsEbook());
+        }
 
         return bookBuilder.build();
     }

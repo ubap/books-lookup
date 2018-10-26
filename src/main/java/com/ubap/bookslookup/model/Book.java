@@ -22,4 +22,7 @@ public class Book {
     @Getter
     private String thumbnailUrl;
 
+    @Getter
+    private Boolean ebook;
+
 }
