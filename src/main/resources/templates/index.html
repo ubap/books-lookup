@@ -19,8 +19,8 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"
-                        th:attrappend="aria-current=${iterStat.index == #lists.size(breadcrumbs)-1} ? page : no"
-                        th:classappend="${iterStat.index == #lists.size(breadcrumbs)-1} ? active : no"
+                        th:attrappend="aria-current=${iterStat.index == #lists.size(breadcrumbs)-1} ? page : ''"
+                        th:classappend="${iterStat.index == #lists.size(breadcrumbs)-1} ? active : ''"
                         th:each="breadcrumb, iterStat : ${breadcrumbs}">
 
                         <a th:if="${iterStat.index < #lists.size(breadcrumbs)-1}"
@@ -31,9 +31,7 @@
             </nav>
         </div>
     </div>
-</div>
 
-<div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
@@ -56,9 +54,47 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container-fluid" style="margin-top: 20px">
+    <div class="row" th:if="${not #strings.isEmpty(query)}">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title" th:utext="${#lists.size(books)} + ' results for<br/><b>' + ${query} + '</b>'"></h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Cover</th>
+                                <th>Title</th>
+                                <th>Subtitle</th>
+                                <th>Authors</th>
+                                <th>ISBN 10/13</th>
+                            </tr>
+                            </thead>
+                            <tr class="clickable-row" th:each="book : ${books}"
+                                th:attr="data-isbn=${book.isbn.isbn10} + ',' + ${book.isbn.isbn13}">
+                                <td>
+                                    <img th:src="${#strings.isEmpty(book.thumbnailUrl) ?
+                                    'https://books.google.pl/googlebooks/images/no_cover_thumb.gif' : book.thumbnailUrl}"
+                                         alt="Book cover image">
+                                </td>
+                                <td th:text="${book.title}">Title</td>
+                                <td th:text="${book.subtitle}">subtitle</td>
+                                <td>
+                                    <p th:each="author : ${book.authors}"
+                                       th:text="${author}">Author</p>
+                                </td>
+                                <td th:utext="${book.isbn.isbn10} + '<br/>' + ${book.isbn.isbn13}">12123214125125</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <footer class="footer">
@@ -71,12 +107,10 @@
 </div>
 
 <!-- Placed at the end of the document so the pages load faster -->
-<!-- Latest compiled and minified JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
     $(document).ready(function() {
         var queryInput = $("#query");
