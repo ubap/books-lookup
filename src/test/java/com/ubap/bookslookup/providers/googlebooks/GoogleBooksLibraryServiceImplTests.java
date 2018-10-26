@@ -2,6 +2,7 @@ package com.ubap.bookslookup.providers.googlebooks;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ubap.bookslookup.model.Book;
+import com.ubap.bookslookup.model.Isbn;
 import com.ubap.bookslookup.providers.googlebooks.model.Item;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -70,6 +71,12 @@ public class GoogleBooksLibraryServiceImplTests {
     public void searchForBooksWithIsbnByTitle() {
         List<Book> bookList = this.googleBooksLibraryService.searchForBooksWithIsbnByTitle("Krzyżacy");
         Assertions.assertNotEquals(0, bookList.size());
+    }
+
+    @Test
+    public void searchForBookByIsbn() {
+        Book book = this.googleBooksLibraryService.searchForBookByIsbn(new Isbn("5040223005", null));
+        Assertions.assertEquals("Krzyżacy", book.getTitle());
     }
 
 }

@@ -7,6 +7,7 @@ import com.ubap.bookslookup.providers.googlebooks.model.Item;
 import com.ubap.bookslookup.providers.googlebooks.model.Response;
 import com.ubap.bookslookup.providers.googlebooks.model.VolumeInfo;
 import com.ubap.bookslookup.services.LibraryService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class GoogleBooksLibraryServiceImpl implements LibraryService {
 
@@ -26,6 +28,9 @@ public class GoogleBooksLibraryServiceImpl implements LibraryService {
     private static final String QUERY_BY_TITLE = "https://www.googleapis.com/books/v1/volumes?maxResults="
             + MAX_RESULTS_PER_PAGE
             + "&startIndex=%d&q=intitle:%s&key=%s&fields=kind,totalItems,items(volumeInfo/title,volumeInfo/subtitle," +
+            "volumeInfo/authors,volumeInfo/industryIdentifiers,volumeInfo/imageLinks)";
+    private static final String QUERY_BY_ISBN = "https://www.googleapis.com/books/v1/volumes?" +
+            "q=isbn:%s&key=%s&fields=kind,totalItems,items(volumeInfo/title,volumeInfo/subtitle," +
             "volumeInfo/authors,volumeInfo/industryIdentifiers,volumeInfo/imageLinks)";
 
     @Value("${keys.googleApi}")
@@ -45,8 +50,18 @@ public class GoogleBooksLibraryServiceImpl implements LibraryService {
     }
 
     @Override
-    public Book searchForBookByIsbn(String isbn) {
-        return null;
+    public Book searchForBookByIsbn(Isbn isbn) {
+        Book book = null;
+        String isbn10 = isbn.getIsbn10();
+        String isbn13 = isbn.getIsbn13();
+        if (isbn10 != null && !isbn10.isEmpty()) {
+            book = getBookByIsbn(isbn10);
+        }
+        if (book == null && isbn13 != null && !isbn13.isEmpty()) {
+            book = getBookByIsbn(isbn10);
+        }
+
+        return book;
     }
 
     private Response queryByTitle(String title, int startIndex) {
@@ -54,6 +69,24 @@ public class GoogleBooksLibraryServiceImpl implements LibraryService {
         String url = String.format(QUERY_BY_TITLE, startIndex, title, key);
         ResponseEntity<Response> response = restTemplate.getForEntity(url, Response.class);
         return response.getBody();
+    }
+
+    private Response queryByIsbn(String isbn) {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = String.format(QUERY_BY_ISBN, isbn, key);
+        ResponseEntity<Response> response = restTemplate.getForEntity(url, Response.class);
+        return response.getBody();
+    }
+
+    private Book getBookByIsbn(String isbn) {
+        Response response = queryByIsbn(isbn);
+        List<Book> bookList = extractBooksFromResponse(response);
+        if (bookList.size() == 1) {
+            return bookList.get(1);
+        } else if (bookList.size() > 1) {
+            log.error("Got more than 1 book for isbn: {}", isbn);
+        }
+        return null;
     }
 
     private List<Book> filterBooksWithoutIsbn(List<Book> bookList) {

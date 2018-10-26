@@ -7,11 +7,32 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/book.css}"/>
 </head>
 <body>
 
 <div class="container-fluid" style="margin-top: 20px">
     <div th:replace="fragments/headerAndFooter :: header"></div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Book details</h1>
+                </div>
+                <div class="panel-body book-details-outer">
+                    <h1 th:text="${book.title}"></h1>
+                    <h2 th:if="${not #strings.isEmpty(book.subtitle)}" th:text="${book.subtitle}"></h2>
+                    <img th:src="${#strings.isEmpty(book.thumbnailUrl) ?
+                                    'https://books.google.pl/googlebooks/images/no_cover_thumb.gif' : book.thumbnailUrl}"
+                         alt="Book cover image">
+                    <h4>
+                        <th:block th:each="author : ${book.authors}" th:utext="${author} + '<br/>'">Author</th:block>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div th:replace="fragments/headerAndFooter :: footer"></div>
 </div>
