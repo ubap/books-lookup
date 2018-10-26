@@ -45,7 +45,8 @@
                         <form id="search" action="#">
                             <div class="form-group">
                                 <label for="query">Book title:</label>
-                                <input type="text" class="form-control" id="query" aria-describedby="emailHelp" placeholder="Book title">
+                                <input type="text" class="form-control" id="query" aria-describedby="emailHelp"
+                                       placeholder="Book title" th:value="${query}">
                                 <small id="emailHelp" class="form-text text-muted">Enter the title of the book you want to search for.</small>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Submit" />
@@ -76,5 +77,19 @@
         crossorigin="anonymous"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var queryInput = $("#query");
+        // set the cursor the the end of the input
+        queryInput.focus(function() {
+            this.selectionStart = this.selectionEnd = Number.MAX_SAFE_INTEGER;
+        });
+        queryInput.focus();
+        $("#search").submit(function(event) {
+            document.location.href = "/search/" + queryInput.val();
+            event.preventDefault();
+        });
+    });
+</script>
 </body>
 </html>
