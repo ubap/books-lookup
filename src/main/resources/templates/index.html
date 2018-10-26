@@ -18,7 +18,15 @@
             </div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active" aria-current="page">Search</li>
+                    <li class="breadcrumb-item"
+                        th:attrappend="aria-current=${iterStat.index == #lists.size(breadcrumbs)-1} ? page : no"
+                        th:classappend="${iterStat.index == #lists.size(breadcrumbs)-1} ? active : no"
+                        th:each="breadcrumb, iterStat : ${breadcrumbs}">
+
+                        <a th:if="${iterStat.index < #lists.size(breadcrumbs)-1}"
+                           th:href="${breadcrumb.path}" th:text="${breadcrumb.display}"> Path breadcrumb </a>
+                        <th:block th:if="${iterStat.index == #lists.size(breadcrumbs)-1}" th:text="${breadcrumb.display}"> Last </th:block>
+                    </li>
                 </ol>
             </nav>
         </div>
