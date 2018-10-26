@@ -8,10 +8,10 @@ import org.springframework.lang.Nullable;
 public interface ShopService {
 
     @NonNull
-    String getServiceLogoUrl();
+    String getStoreLogoUrl();
 
     @NonNull
-    String getServiceName();
+    String getStoreName();
 
     @Nullable
     Offer getCheapestBookOfferByIsbn(@NonNull Isbn isbn);

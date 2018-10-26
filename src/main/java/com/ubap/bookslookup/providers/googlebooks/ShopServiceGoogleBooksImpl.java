@@ -25,12 +25,12 @@ public class ShopServiceGoogleBooksImpl implements ShopService {
     }
 
     @Override
-    public String getServiceLogoUrl() {
+    public String getStoreLogoUrl() {
         return SERVICE_LOGO_URL;
     }
 
     @Override
-    public String getServiceName() {
+    public String getStoreName() {
         return SERVICE_NAME;
     }
 

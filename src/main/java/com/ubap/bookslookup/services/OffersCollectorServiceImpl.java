@@ -27,7 +27,7 @@ public class OffersCollectorServiceImpl implements OffersCollectorService {
             Offer offer = shopService.getCheapestBookOfferByIsbn(isbn);
             if (offer != null) {
                 storeOfferList.add(new StoreOffer(
-                        shopService.getServiceLogoUrl(), shopService.getServiceName(), offer));
+                        shopService.getStoreLogoUrl(), shopService.getStoreName(), offer));
             }
         }
 
