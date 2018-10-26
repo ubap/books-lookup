@@ -82,7 +82,7 @@ public class GoogleBooksLibraryServiceImpl implements LibraryService {
         Response response = queryByIsbn(isbn);
         List<Book> bookList = extractBooksFromResponse(response);
         if (bookList.size() == 1) {
-            return bookList.get(1);
+            return bookList.get(0);
         } else if (bookList.size() > 1) {
             log.error("Got more than 1 book for isbn: {}", isbn);
         }
