@@ -15,13 +15,12 @@ public class ShopServiceGoogleBooksImpl implements ShopService {
     private static final String SERVICE_NAME = "Google Books";
     private static final String SERVICE_LOGO_URL = "https://www.google.pl/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png";
 
-    @Value("${keys.googleApi}")
     private String key;
-
     private RestTemplate restTemplate;
 
     @Autowired
-    public ShopServiceGoogleBooksImpl(RestTemplate restTemplate) {
+    public ShopServiceGoogleBooksImpl(@Value("${keys.googleApi}") String key, RestTemplate restTemplate) {
+        this.key = key;
         this.restTemplate = restTemplate;
     }
 

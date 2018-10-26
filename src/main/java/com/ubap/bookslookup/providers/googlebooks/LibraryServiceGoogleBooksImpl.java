@@ -26,13 +26,12 @@ public class LibraryServiceGoogleBooksImpl implements LibraryService {
             + "&startIndex=%d&q=intitle:%s&key=%s&fields=kind,totalItems,items(volumeInfo/title,volumeInfo/subtitle," +
             "volumeInfo/authors,volumeInfo/industryIdentifiers,volumeInfo/imageLinks)";
 
-    @Value("${keys.googleApi}")
     private String key;
-
     private RestTemplate restTemplate;
 
     @Autowired
-    public LibraryServiceGoogleBooksImpl(RestTemplate restTemplate) {
+    public LibraryServiceGoogleBooksImpl(@Value("${keys.googleApi}") String key, RestTemplate restTemplate) {
+        this.key = key;
         this.restTemplate = restTemplate;
     }
 
