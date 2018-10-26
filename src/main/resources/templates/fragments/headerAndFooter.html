@@ -23,7 +23,7 @@
                         th:classappend="${iterStat.index == #lists.size(breadcrumbs)-1} ? active : ''"
                         th:each="breadcrumb, iterStat : ${breadcrumbs}">
 
-                        <a th:if="${iterStat.index < #lists.size(breadcrumbs)-1}"
+                        <a class="breadcrumb-hyperlink" th:if="${iterStat.index < #lists.size(breadcrumbs)-1}"
                            th:href="${breadcrumb.path}" th:text="${breadcrumb.display}"> Path breadcrumb </a>
                         <th:block th:if="${iterStat.index == #lists.size(breadcrumbs)-1}" th:text="${breadcrumb.display}"> Last </th:block>
                     </li>
