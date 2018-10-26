@@ -18,10 +18,10 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GoogleBooksLibraryServiceImplTests {
+public class LibraryServiceGoogleBooksImplTests {
 
     @Autowired
-    private GoogleBooksLibraryServiceImpl googleBooksLibraryService;
+    private LibraryServiceGoogleBooksImpl googleBooksLibraryService;
 
     @Test
     public void testDI() {
@@ -56,7 +56,7 @@ public class GoogleBooksLibraryServiceImplTests {
         ObjectMapper objectMapper = new ObjectMapper();
         Item item = objectMapper.readValue(itemJson, Item.class);
 
-        Book book = GoogleBooksLibraryServiceImpl.bookFromItem(item);
+        Book book = LibraryServiceGoogleBooksImpl.bookFromItem(item);
 
         assertEquals("Krzyżacy", book.getTitle());
         assertNull(book.getSubtitle());
