@@ -123,6 +123,9 @@
             document.location.href = "/search/" + queryInput.val();
             event.preventDefault();
         });
+        $(".clickable-row").click(function() {
+            document.location.href += "/book/" + $(this).data("isbn");
+        });
     });
 </script>
 </body>
