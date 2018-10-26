@@ -3,7 +3,9 @@ package com.ubap.bookslookup.controllers;
 import com.ubap.bookslookup.model.Book;
 import com.ubap.bookslookup.model.Breadcrumb;
 import com.ubap.bookslookup.model.Isbn;
+import com.ubap.bookslookup.model.StoreOffer;
 import com.ubap.bookslookup.services.LibraryService;
+import com.ubap.bookslookup.services.OffersCollectorService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,16 +14,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Slf4j
 @Controller
 public class BookController {
 
     private LibraryService libraryService;
+    private OffersCollectorService offersCollectorService;
 
     @Autowired
-    public BookController(LibraryService libraryService) {
+    public BookController(LibraryService libraryService, OffersCollectorService offersCollectorService) {
         this.libraryService = libraryService;
+        this.offersCollectorService = offersCollectorService;
     }
 
     @RequestMapping({"/search/{query}/book/{isbns}"})
@@ -32,6 +37,9 @@ public class BookController {
         Isbn isbn = new Isbn(isbns.substring(0, separatorIndex), isbns.substring(separatorIndex + 1));
         Book book = this.libraryService.searchForBookByIsbn(isbn);
 
+        List<StoreOffer> storeOfferList = this.offersCollectorService.getOffersSortedFromCheapest(book.getIsbn());
+
+        model.addAttribute("offers", storeOfferList);
         model.addAttribute("book", book);
         model.addAttribute("breadcrumbs", Arrays.asList(
                 new Breadcrumb("/", "Search"),
