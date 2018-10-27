@@ -1,8 +1,10 @@
 package com.ubap.bookslookup.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.springframework.lang.Nullable;
 
+@EqualsAndHashCode
 public class Isbn {
     @Getter
     @Nullable

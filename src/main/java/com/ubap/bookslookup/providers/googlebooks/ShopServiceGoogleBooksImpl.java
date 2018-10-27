@@ -6,6 +6,7 @@ import com.ubap.bookslookup.providers.googlebooks.model.Response;
 import com.ubap.bookslookup.services.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -34,6 +35,7 @@ public class ShopServiceGoogleBooksImpl implements ShopService {
         return SERVICE_NAME;
     }
 
+    @Cacheable("googleBooksCheapestBookOfferByIsbn")
     @Override
     public Offer getCheapestBookOfferByIsbn(Isbn isbn) {
         Offer offer = null;

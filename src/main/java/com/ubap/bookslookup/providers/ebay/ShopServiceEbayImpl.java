@@ -11,6 +11,7 @@ import com.ubap.bookslookup.providers.ebay.model.SellingStatus;
 import com.ubap.bookslookup.services.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -56,6 +57,7 @@ public class ShopServiceEbayImpl implements ShopService {
         return STORE_NAME;
     }
 
+    @Cacheable("ebayCheapestBookOfferByIsbn")
     @Override
     public Offer getCheapestBookOfferByIsbn(Isbn isbn) {
         List<Offer> offerList = new ArrayList<>();

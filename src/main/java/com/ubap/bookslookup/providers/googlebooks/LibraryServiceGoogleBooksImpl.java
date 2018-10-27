@@ -4,9 +4,11 @@ import com.ubap.bookslookup.model.Book;
 import com.ubap.bookslookup.model.Isbn;
 import com.ubap.bookslookup.providers.googlebooks.model.Response;
 import com.ubap.bookslookup.services.LibraryService;
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -35,8 +37,9 @@ public class LibraryServiceGoogleBooksImpl implements LibraryService {
         this.restTemplate = restTemplate;
     }
 
+    @Cacheable("googleBooks")
     @Override
-    public List<Book> searchForBooksWithIsbnByTitle(String title) {
+    public List<Book> searchForBooksWithIsbnByTitle(@NonNull String title) {
         List<Book> bookList = new ArrayList<>();
 
         int totalItems = 1;
@@ -48,6 +51,7 @@ public class LibraryServiceGoogleBooksImpl implements LibraryService {
         return bookList;
     }
 
+    @Cacheable("googleBook")
     @Override
     public Book searchForBookByIsbn(Isbn isbn) {
         Book book = null;
