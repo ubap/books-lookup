@@ -1,0 +1,575 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 33,
+  "items": [
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Henryk Sienkiewicz"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9785040223008"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "5040223005"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy w innym świetle",
+        "subtitle": "od średniowiecza do czasów współczesnych",
+        "authors": [
+          "Zofia Kowalska",
+          "Zofia Kowalska-Urbankowa"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105017761003"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=JI4WAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=JI4WAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Henryk Samsonowicz"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UVA:X002125252"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=tNVBAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=tNVBAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Jan Tyszkiewicz",
+          "Karol Mórawski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "IND:32000007336201"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=8h3VAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=8h3VAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Prusy-Litwa-Krzyżacy",
+        "authors": [
+          "Henryk Łowmiański"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105043013668"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=M8dFAAAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=M8dFAAAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy od A do Z",
+        "authors": [
+          "Pawel Pizuński"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105024877701"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=U44WAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=U44WAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Pisma wybrane: Krzyżacy. t.1-2",
+        "authors": [
+          "Henryk Sienkiewicz"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105015051423"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy Henryka Sienkiewicza",
+        "subtitle": "",
+        "authors": [
+          "Anna Habryn"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UOM:39015027662033"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=N_0hAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=N_0hAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy 1410",
+        "subtitle": "obrazy z przeszłości : Ego te baptizo in gladio - godło krzyżackie",
+        "authors": [
+          "Józef Ignacy Kraszewski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8321603378"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788321603377"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=imVMAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=imVMAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "subtitle": "niemęczący opis akcji : wg Henryka Sienkiewicza wersja uwspółcześniona wierszem",
+        "authors": [
+          "Jerzy Grochowski",
+          "Studio Projektowe, Jerzy Grochowski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8393668808"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788393668809"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "subtitle": "historia działań militarnych",
+        "authors": [
+          "William L. Urban"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8305134946"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788305134941"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=cpH5GQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=cpH5GQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Inowrocław, Krzyżacy a zjednoczenie Królestwa Polskiego",
+        "authors": [
+          "Stanislaw Koc"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8361195327"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788361195320"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Józef Ignacy Kraszewski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:833912598"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:637604462"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy, szpitalnicy, kondotierzy",
+        "authors": [
+          "Błażej Śliwiński"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8360518017"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788360518014"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy w ilustracjach",
+        "authors": [
+          "Konstanty Gorski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:836641965"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy pod żaglami",
+        "subtitle": "wędrówki po gminie Ryn",
+        "authors": [
+          "Wojciech Marek Darski",
+          "Anna Baranowska (fotografia)"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8392274113"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788392274117"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy w Starogardzie",
+        "subtitle": "magia filmu",
+        "authors": [
+          "Andrzej Błażyński",
+          "Joanna Szutkowska-Rajewska",
+          "Muzeum Ziemi Kociewskiej (Starogard Gdański)."
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:898263765"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Ilustracje do powieści Henryka Sienkiewicza \"Krzyżacy\"",
+        "authors": [
+          "Konstanty Gorski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:831292599"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Templariusze, krzyżacy i inne zakony rycerskie",
+        "authors": [
+          "Edward Potkowski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8311139725"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788311139725"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "The Knights of the Cross; Or, Krzyżacy",
+        "subtitle": "Historical Romance",
+        "authors": [
+          "Henryk Sienkiewicz"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "COLUMBIA:0036742929"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ZgxEAAAAYAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ZgxEAAAAYAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy i Polska",
+        "subtitle": "Wspomnienie historyczne. Przez S.",
+        "authors": [
+          "Henryk Schmitt"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "BSB:BSB10455603"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=R7JAAAAAcAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=R7JAAAAAcAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Polska i Krzyżacy",
+        "subtitle": "Opowiadanie historyczne. W Pięćsetna rocznicę bitwy pod Grunwaldem",
+        "authors": [
+          "Czesław Pieniążek"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "WISC:89100342997"
+          }
+        ],
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YjXTAAAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YjXTAAAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        }
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Henryk Sienkiewicz - Krzyżacy",
+        "authors": [
+          "Wiktor Doleżan"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:985882872"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy Henryka Sienkiewicza",
+        "subtitle": "geneza, tło, charakterystyka osób, wartość, treść",
+        "authors": [
+          "Józef Maciejowski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:830261256"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Henryk Pachoński"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:750876503"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "subtitle": "zakon zdrady",
+        "authors": [
+          "Krzysztof Jan Derda"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8381044413"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788381044417"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Sylvain Gouguenheim",
+          "Małgorzata Dalla Bella",
+          "Sławomir Jóźwiak",
+          "Muzeum Zamkowe (Malbork)."
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "8360518475"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9788360518472"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "\"Krzyżacy\"",
+        "subtitle": "śmierć kata Danusi",
+        "authors": [
+          "Konstanty Gorski"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:1036568454"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Stanisław Batowski-Kaczor"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:1036426651"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Les Chevaliers teutoniques [\"Krzyżacy\"], roman héroïque. Traduction du Cte Wodzinski et de B. Kozakiewicz. Préface de J.-H. Rosny",
+        "authors": [
+          "Henryk Sienkiewicz"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:459106952"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "\"Krzyżacy\" Henryka Sienkiewicza",
+        "authors": [
+          "Stefan Papée"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:836740465"
+          }
+        ]
+      }
+    },
+    {
+      "volumeInfo": {
+        "title": "Krzyżacy Henryka Sienkiewicza",
+        "authors": [
+          "Jan Kramer"
+        ],
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:838009550"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Books lookup tool</title>
+    <th:block th:include="fragments/headerAndFooter :: headerfiles"/>
+</head>
+<body>
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div th:replace="fragments/headerAndFooter :: header"></div>
+
+    <div id="loader"></div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Book details</h1>
+                </div>
+                <div class="panel-body book-details-outer">
+                    <h1 th:text="${book.title}"></h1>
+                    <h2 th:if="${not #strings.isEmpty(book.subtitle)}" th:text="${book.subtitle}"></h2>
+                    <th:block th:if="${book.ebook}">
+                        <h4>Ebook</h4>
+                    </th:block>
+                    <h5 th:text="'ISBN: ' + ${book.isbn.isbn10} + ', ' + ${book.isbn.isbn13}"></h5>
+                    <img th:src="${#strings.isEmpty(book.thumbnailUrl) ?
+                                    'https://books.google.pl/googlebooks/images/no_cover_thumb.gif' : book.thumbnailUrl}"
+                         alt="Book cover image">
+                    <h4 th:if="${#lists.isEmpty(book.authors)}">
+                        <th:block th:each="author : ${book.authors}" th:utext="${author} + '<br/>'">Author</th:block>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Sale offers</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="thead-inverse">
+                            <tr>
+                                <th>Store logo</th>
+                                <th>Store</th>
+                                <th>Price</th>
+                                <th>Sale url</th>
+                            </tr>
+                            </thead>
+                            <tr class="clickable-row" th:each="offer : ${offers}"
+                                th:attr="data-url=${offer.url}">
+                                <td><img class="logo" th:src="${offer.storeLogoUrl}" alt="Store logo"></td>
+                                <td th:text="${offer.storeName}">Store</td>
+                                <td th:text="${#numbers.formatDecimal(offer.price, 0, 'COMMA', 2, 'POINT')} + ' ' + ${offer.currency}">Price</td>
+                                <td th:text="${offer.url}">ulr</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="fragments/headerAndFooter :: footer"></div>
+</div>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script>
+    function displayLoader() {
+        $( "#loader" ).addClass("loader");
+    }
+    $(document).ready(function() {
+        $(".breadcrumb-hyperlink").click(function() {
+            displayLoader();
+        });
+        $(".clickable-row").click(function() {
+            displayLoader();
+            window.location = $(this).data("url");
+        });
+    });
+</script>
+</body>
+</html>
