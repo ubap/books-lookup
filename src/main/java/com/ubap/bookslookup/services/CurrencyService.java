@@ -2,6 +2,7 @@ package com.ubap.bookslookup.services;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 public interface CurrencyService {
 
@@ -9,6 +10,7 @@ public interface CurrencyService {
 
     List<String> availableCurrencies();
 
-    BigDecimal convertCurrency(String from, String to, BigDecimal val);
+    BigDecimal convertCurrency(String from, String to, BigDecimal val, Map<String, BigDecimal> rates);
 
+    Map<String, BigDecimal> getRates();
 }

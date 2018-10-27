@@ -57,7 +57,7 @@
                                 th:attr="data-url=${offer.url}">
                                 <td><img class="logo" th:src="${offer.storeLogoUrl}" alt="Store logo"></td>
                                 <td th:text="${offer.storeName}">Store</td>
-                                <td th:text="${offer.price / 100} + '.' + ${offer.price % 100} + ' ' + ${offer.currency}">Price</td>
+                                <td th:text="${#numbers.formatDecimal(offer.price, 0, 'COMMA', 2, 'POINT')} + ' ' + ${offer.currency}">Price</td>
                                 <td th:text="${offer.url}">ulr</td>
                             </tr>
                         </table>

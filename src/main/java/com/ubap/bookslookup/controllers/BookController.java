@@ -45,7 +45,8 @@ public class BookController {
         Isbn isbn = new Isbn(isbns.substring(0, separatorIndex), isbns.substring(separatorIndex + 1));
         Book book = this.libraryService.searchForBookByIsbn(isbn);
 
-        List<StoreOffer> storeOfferList = this.offersCollectorService.getOffersSortedFromCheapest(book.getIsbn());
+        List<StoreOffer> storeOfferList = this.offersCollectorService.getOffersSortedFromCheapest(
+                book.getIsbn(), this.userSession.getCurrency());
 
         model.addAttribute("availableCurrencies", this.currencyService.availableCurrencies());
         model.addAttribute("currency", this.userSession.getCurrency());

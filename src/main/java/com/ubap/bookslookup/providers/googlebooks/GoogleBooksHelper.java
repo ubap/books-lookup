@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -67,11 +68,7 @@ final class GoogleBooksHelper {
             return null;
         }
         Price price = saleInfo.getRetailPrice();
-
-        // convert the price to decimal format
-        int priceDecimal = Integer.parseInt(price.getAmount().replace(".", ""));
-
-        return new Offer(saleInfo.getBuyLink(), price.getCurrencyCode(), priceDecimal);
+        return new Offer(saleInfo.getBuyLink(), price.getCurrencyCode(), new BigDecimal(price.getAmount()));
     }
 
     static Book bookFromItem(Item item) {

@@ -18,6 +18,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -79,7 +80,7 @@ public class ShopServiceEbayImpl implements ShopService {
             return null;
         }
 
-        offerList.sort(Comparator.comparingInt(Offer::getPrice));
+        offerList.sort(Comparator.comparing(Offer::getPrice));
         return offerList.get(0);
     }
 
@@ -102,8 +103,6 @@ public class ShopServiceEbayImpl implements ShopService {
         SellingStatus sellingStatus = item.getSellingStatus().get(0);
         Price currentPrice = sellingStatus.getCurrentPrice().get(0);
 
-        // convert the price to decimal format
-        int priceDecimal = (int) (Double.parseDouble(currentPrice.getValue()) * 100.);
-        return new Offer(viewItemUrl, currentPrice.getCurrencyId(), priceDecimal);
+        return new Offer(viewItemUrl, currentPrice.getCurrencyId(), new BigDecimal(currentPrice.getValue()));
     }
 }

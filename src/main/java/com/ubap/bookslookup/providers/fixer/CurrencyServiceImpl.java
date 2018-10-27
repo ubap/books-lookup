@@ -4,6 +4,7 @@ import com.ubap.bookslookup.providers.fixer.model.Response;
 import com.ubap.bookslookup.services.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,7 +24,7 @@ public class CurrencyServiceImpl implements CurrencyService {
     private RestTemplate restTemplate;
 
     @Autowired
-    public CurrencyServiceImpl(@Value("${keys.fixerApi}")String key, RestTemplate restTemplate) {
+    public CurrencyServiceImpl(@Value("${keys.fixerApi}") String key, RestTemplate restTemplate) {
         this.key = key;
         this.restTemplate = restTemplate;
     }
@@ -39,18 +40,19 @@ public class CurrencyServiceImpl implements CurrencyService {
     }
 
     @Override
-    public BigDecimal convertCurrency(String from, String to, BigDecimal val) {
-        Response response = requestRates();
-        Map<String, BigDecimal> rates = response.getRates();
+    public BigDecimal convertCurrency(String from, String to, BigDecimal val, Map<String, BigDecimal> rates) {
         BigDecimal baseToFromRate = rates.get(from);
         BigDecimal baseToToRate = rates.get(to);
         BigDecimal fromInBase = val.divide(baseToFromRate, 20, BigDecimal.ROUND_HALF_UP);
         return fromInBase.multiply(baseToToRate);
     }
 
-    private Response requestRates() {
+    @Cacheable("currencyRates")
+    @Override
+    public Map<String, BigDecimal> getRates() {
         String url = String.format(QUERY_RATES, this.key);
         ResponseEntity<Response> responseEntity = this.restTemplate.getForEntity(url, Response.class);
-        return responseEntity.getBody();
+        return responseEntity.getBody().getRates();
     }
+
 }

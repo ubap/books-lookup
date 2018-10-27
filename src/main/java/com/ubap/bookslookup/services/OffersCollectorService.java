@@ -9,6 +9,6 @@ import java.util.List;
 public interface OffersCollectorService {
 
     @NonNull
-    List<StoreOffer> getOffersSortedFromCheapest(@NonNull Isbn isbn);
+    List<StoreOffer> getOffersSortedFromCheapest(@NonNull Isbn isbn, @NonNull String currency);
 
 }

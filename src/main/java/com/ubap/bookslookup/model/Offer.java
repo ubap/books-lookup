@@ -2,6 +2,8 @@ package com.ubap.bookslookup.model;
 
 import lombok.Getter;
 
+import java.math.BigDecimal;
+
 public class Offer {
 
     @Getter
@@ -11,9 +13,9 @@ public class Offer {
     private String currency;
 
     @Getter
-    private int price;
+    private BigDecimal price;
 
-    public Offer(String url, String currency, int price) {
+    public Offer(String url, String currency, BigDecimal price) {
         this.url = url;
         this.currency = currency;
         this.price = price;
