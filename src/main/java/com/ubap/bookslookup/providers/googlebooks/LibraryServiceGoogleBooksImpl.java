@@ -61,16 +61,15 @@ public class LibraryServiceGoogleBooksImpl implements LibraryService {
             book = GoogleBooksHelper.getBookByIsbn(this.restTemplate, isbn10, this.key);
         }
         if (book == null && isbn13 != null && !isbn13.isEmpty()) {
-            book = GoogleBooksHelper.getBookByIsbn(this.restTemplate, isbn10, this.key);
+            book = GoogleBooksHelper.getBookByIsbn(this.restTemplate, isbn13, this.key);
         }
 
         return book;
     }
 
     private Response queryByTitle(String title, int startIndex) {
-        RestTemplate restTemplate = new RestTemplate();
         String url = String.format(QUERY_BY_TITLE, startIndex, title, key);
-        ResponseEntity<Response> response = restTemplate.getForEntity(url, Response.class);
+        ResponseEntity<Response> response = this.restTemplate.getForEntity(url, Response.class);
         return response.getBody();
     }
 

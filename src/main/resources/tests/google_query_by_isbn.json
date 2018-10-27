@@ -1,0 +1,98 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "jA7vDAAAQBAJ",
+      "etag": "63/6FvxClts",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/jA7vDAAAQBAJ",
+      "volumeInfo": {
+        "title": "Krzyżacy",
+        "authors": [
+          "Henryk Sienkiewicz"
+        ],
+        "publisher": "Litres",
+        "publishedDate": "2017-09-02",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9785040223008"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "5040223005"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.pl/books?id=jA7vDAAAQBAJ&printsec=frontcover&dq=isbn:5040223005&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=jA7vDAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://market.android.com/details?id=book-jA7vDAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "PL",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 1.78,
+          "currencyCode": "PLN"
+        },
+        "retailPrice": {
+          "amount": 1.78,
+          "currencyCode": "PLN"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=jA7vDAAAQBAJ&rdid=book-jA7vDAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1780000.0,
+              "currencyCode": "PLN"
+            },
+            "retailPrice": {
+              "amountInMicros": 1780000.0,
+              "currencyCode": "PLN"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "PL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/Krzy%C5%BCacy-sample-epub.acsm?id=jA7vDAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.pl/books/download/Krzy%C5%BCacy-sample-pdf.acsm?id=jA7vDAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=jA7vDAAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      }
+    }
+  ]
+}
