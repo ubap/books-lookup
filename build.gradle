@@ -19,6 +19,12 @@ bootRun {
     systemProperties = System.properties
 }
 
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
 group = 'com.ubap'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
