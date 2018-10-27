@@ -46,7 +46,8 @@ public class GoogleBooksHelperTests {
         assertEquals("9785040223008", book.getIsbn().getIsbn13());
         assertEquals(1, book.getAuthors().size());
         assertEquals("Henryk Sienkiewicz", book.getAuthors().get(0));
-        assertEquals("http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api", book.getThumbnailUrl());
+        assertEquals("http://books.google.com/books/content?id=jA7vDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+                book.getThumbnailUrl());
     }
 
 }
