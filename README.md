@@ -41,7 +41,7 @@ How to build:
 How to run:
 * Directly from gradle `./gradlew bootRun`
 * Or execute the jar `java -jar build/libs/bookslookup-0.0.1-SNAPSHOT.jar`
-* To run in production mode (port on port 80), append `-Dspring.profiles.active=prod` to the command:
+* To run in production mode (on port 80), append `-Dspring.profiles.active=prod` to the command:
 ```
 ./gradlew bootRun -Dspring.profiles.active=prod
 # or
