@@ -1,7 +1,9 @@
 package com.ubap.bookslookup.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+@EqualsAndHashCode
 public class Breadcrumb {
     @Getter
     private String path;
